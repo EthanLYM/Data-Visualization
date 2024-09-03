@@ -1,0 +1,8 @@
+.centernav { /*flexbox center align*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    border: none;
+    padding: 5%;
+}
