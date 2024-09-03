@@ -42,6 +42,26 @@ nav a { /*main format*/
     text-decoration: none;
 }
 
-nav a:hover {
+#mainbutton:hover {
     border-color: #ffffff;
+    color: #ffffff;
+    background-color: #005eff;
+}
+
+#button1:hover {
+    border-color: #ffffff;
+    color: #ffffff;
+    background-color: #ff9100;
+}
+
+#button2:hover {
+    border-color: #ffffff;
+    color: #ffffff;
+    background-color: #ff3c00;
+}
+
+#button3:hover {
+    border-color: #ffffff;
+    color: #ffffff;
+    background-color: #00ff22;
 }
