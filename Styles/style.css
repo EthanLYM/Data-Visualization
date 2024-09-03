@@ -6,7 +6,6 @@ body {
     color: #005eff;
 }
 
-/*w3schools css referenced for hoverable dropdown menu https://www.w3schools.com/howto/howto_css_dropdown.asp*/
 .center { /*flexbox center align*/
     display: flex;
     justify-content: center;
@@ -16,6 +15,7 @@ body {
     padding: 5%;
 }
 
+/*w3schools css referenced for hoverable dropdown menu https://www.w3schools.com/howto/howto_css_dropdown.asp*/
 .dropbutton { /*buttons*/
     border: solid;
     border-width: 0.2em;
