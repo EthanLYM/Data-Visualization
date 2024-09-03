@@ -2,7 +2,46 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10%;
+    height: 25%;
     border: none;
-    padding: 5%;
+    padding: 2.5%;
+}
+
+/*buttons*/
+#mainbutton { /*back to main button*/
+    border-color:#005eff;
+    color: #005eff;
+}
+
+#button1 { /*back to main button*/
+    border-color:#ff9100;
+    color: #ff9100;
+}
+
+#button2 { /*back to main button*/
+    border-color:#ff3c00;
+    color: #ff3c00;
+}
+
+#button3 { /*back to main button*/
+    border-color:#00ff22;
+    color: #00ff22;   
+}
+
+nav a { /*main format*/
+    border: solid;
+    border-width: 0.2em;
+    padding: 1em;
+    font-size: 1em;
+    width: 10%;
+    margin: 1%;
+    font-size: 1em;
+    background-color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+nav a:hover {
+    border-color: #ffffff;
 }
