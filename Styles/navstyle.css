@@ -13,19 +13,24 @@
     color: #005eff;
 }
 
-#button1 { /*back to main button*/
+#button1 { 
     border-color:#ff9100;
     color: #ff9100;
 }
 
-#button2 { /*back to main button*/
+#button2 { 
     border-color:#ff3c00;
     color: #ff3c00;
 }
 
-#button3 { /*back to main button*/
+#button3 { 
     border-color:#00ff22;
     color: #00ff22;   
+}
+
+#button4 {
+    border-color:#8c00ff;
+    color: #8c00ff;   
 }
 
 nav a { /*main format*/
@@ -64,4 +69,10 @@ nav a { /*main format*/
     border-color: #ffffff;
     color: #ffffff;
     background-color: #00ff22;
+}
+
+#button4:hover {
+    border-color: #ffffff;
+    color: #ffffff;
+    background-color: #8c00ff;
 }
