@@ -68,4 +68,14 @@ body {
     color: #ffffff;
     border-color: #ffffff;
 }
-  
+
+footer { /*footer*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    border: none;
+    padding: 1%;
+    background-color: #005eff;
+    color: #ffffff;
+}
