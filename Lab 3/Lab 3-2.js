@@ -1,35 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="UTF-8"/>
-	<meta name="description"	content="Data Visualisation Exercise 3"/>
-	<meta name="keywords"		  content="HTML, CSS, JavaScript"/>
-	<meta name="author"			  content="Ethan"/>
-
-	<title>Task 3.2</title>
-	<!--Insert description of exercise  -->
-
-	<script src="https://d3js.org/d3.v7.min.js"></script>
-	
-	<link rel="stylesheet" href="../Styles/style.css">
-	<link rel="stylesheet" href="../Styles/navstyle.css">
-	
-</head>
-
-<body>
-
-	<nav class = "centernav">
-		<a href = "../main.html" id = "mainbutton">Main</a>
-		<a href = "lab 3 - 1.html" id = "button1">Lab 3.1</a>
-		<a href = "lab 3 - 2.html" id = "button2">Lab 3.2</a>
-	</nav>
-
-	<h1>The D3 Journey starts here</h1>
-
-	
-	<script>
-		var w = 600;
+function init(){
+    var w = 600;
 	var h = 500;
 	var barPadding = 3;
 	var padding = 75;
@@ -119,11 +89,5 @@
         .attr("class", "y axis")  
         .attr("transform", "translate(" + padding + ", 0)")  
         .call(yAxis);  
-    
-	</script>
-	
-
-	<footer>COS30045 Data Visualisation</footer>
-
-</body>
-</html>
+    }
+window.onload =init;
