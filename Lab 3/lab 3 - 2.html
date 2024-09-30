@@ -84,7 +84,8 @@
 				.attr("height", h)
 				.attr("fill", "rgb(106, 90, 205)");
 	
-		
+	
+	//circle data point creation
 	svg.selectAll("circle")
 		.data(dataset)
 		.enter()
@@ -99,6 +100,7 @@
 			return 5;
 		})
 		.attr("fill", "slategrey");
+		//text
 			svg.selectAll("text")
 			.data(dataset)
 			.enter()
@@ -114,11 +116,13 @@
 				return yScale(d[1]);
 		});
 	
+	//draw x axis to graph
     svg.append("g")  
         .attr("class", "x axis")  
         .attr("transform", "translate(0, " + (h - padding) + ")")  
         .call(xAxis);  
-
+	
+	//draw y axis to graph
     svg.append("g")  
         .attr("class", "y axis")  
         .attr("transform", "translate(" + padding + ", 0)")  

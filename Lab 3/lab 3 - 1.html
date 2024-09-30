@@ -47,6 +47,7 @@
 						[220, 88]
 						];
 
+		//x axis Scaling
 		var xScale = d3.scaleLinear()
 						.domain([d3.min(dataset, function(d){
 							return d[0];
@@ -55,7 +56,8 @@
 						return d[0];
 					})])
 						.range([padding, w - padding]);
-
+		
+		//y axis Scaling
 		var yScale = d3.scaleLinear()
 						.domain([w - padding - 360, padding])
 						.range([d3.min(dataset, function(d){
@@ -70,7 +72,8 @@
 					.attr("width", w)
 					.attr("height", h)
 					.attr("fill", "rgb(106, 90, 205)");
-
+        
+		//circle data point creation
 		svg.selectAll("circle")
 			.data(dataset)
 			.enter()
@@ -85,7 +88,7 @@
 				return 5;
 			})
 			.attr("fill", "slategrey");
-
+            //text
 			svg.selectAll("text")
 				.data(dataset)
 				.enter()
