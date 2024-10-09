@@ -1,0 +1,69 @@
+#updateButton {
+    background-color: white;
+    border-color: blue;
+    color: blue;
+    height: 50px;
+    width: 100px;
+    font-weight: bold;
+    font-size: 13px;
+    border-width: 3px;
+}
+
+#transitionButton1 {
+    background-color: white;
+    border-color: red;
+    color: red;
+    height: 50px;
+    width: 100px;
+    font-weight: bold;
+    font-size: 13px;
+    border-width: 3px;
+    margin-left: 9px;
+}
+
+#transitionButton2 {
+    background-color: white;
+    border-color: green;
+    color: green;
+    height: 50px;
+    width: 100px;
+    font-weight: bold;
+    font-size: 13px;
+    border-width: 3px;
+    margin-left: 9px;
+}
+
+#addButton {
+    background-color: white;
+    border-color: blue;
+    color: blue;
+    height: 50px;
+    width: 100px;
+    font-weight: bold;
+    font-size: 13px;
+    border-width: 3px;
+}
+
+#removeButton {
+    background-color: white;
+    border-color: red;
+    color: red;
+    height: 50px;
+    width: 100px;
+    font-weight: bold;
+    font-size: 13px;
+    border-width: 3px;
+    margin-left: 9px;
+}
+
+#sort {
+    background-color: white;
+    border-color: green;
+    color: green;
+    height: 50px;
+    width: 100px;
+    font-weight: bold;
+    font-size: 13px;
+    border-width: 3px;
+    margin-left: 9px;
+}

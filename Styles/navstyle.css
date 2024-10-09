@@ -1,3 +1,7 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .centernav { /*flexbox center align*/
     display: flex;
     justify-content: center;
@@ -75,4 +79,15 @@ nav a { /*main format*/
     border-color: #ffffff;
     color: #ffffff;
     background-color: #8c00ff;
+}
+
+footer { /*footer*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    border: none;
+    padding: 1%;
+    background-color: #005eff;
+    color: #ffffff;
 }
