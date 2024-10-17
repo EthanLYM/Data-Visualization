@@ -12,7 +12,7 @@ function init(){
                 .projection(projection);
     
     var color = d3.scaleQuantize()
-                .range([d3.schemeGreens[9]]);
+                .range(d3.schemeGreens[9]);
 
     //Create SVG element
     var svg = d3.select("#chart")
@@ -33,13 +33,13 @@ function init(){
 
             for (var i = 0; i < data.length; i++) {
 
-                var dataState = data[i].state;
+                var dataState = data[i].LGA;
 
-                var dataValue = parseFloat(data[i].value);
+                var dataValue = parseFloat(data[i].unemployed);
 
                 for (var j = 0; j < json.features.length; j++) {
                     
-                    var jsonState = json.features[j].properties.name;
+                    var jsonState = json.features[j].properties.LGA_name;
                     
                     if (dataState == jsonState) {
 
