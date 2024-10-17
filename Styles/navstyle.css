@@ -91,3 +91,7 @@ footer { /*footer*/
     background-color: #005eff;
     color: #ffffff;
 }
+
+.center {
+    text-align: center;
+}
