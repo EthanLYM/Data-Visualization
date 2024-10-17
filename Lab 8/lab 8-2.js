@@ -12,29 +12,64 @@ function init(){
                 .projection(projection);
     
     var color = d3.scaleQuantize()
-                .range([Purples]);
+                .range([d3.schemeGreens[9]]);
 
     //Create SVG element
     var svg = d3.select("#chart")
                 .append("svg")
                 .attr("width", w)
-                .attr("height", h)
-                .attr("fill", "grey")
+                .attr("height", h);
     
     d3.csv("VIC_LGA_unemployment.csv").then(function(data){
 
-        console.log(data);
-        dataValue = data;
-    })
-    
-    d3.json("LGA_VIC.json").then(function(json){
+        color.domain([
 
-        svg.selectAll("path")
-            .data(json.features)
-            .enter()
-            .append("path")
-            .attr("d", path)
+            d3.min(data, function (d) { return d.unemployed; }),
+            d3.max(data, function (d) { return d.unemployed; })
 
+        ]);
+
+        d3.json("LGA_VIC.json").then(function(json){
+
+            for (var i = 0; i < data.length; i++) {
+
+                var dataState = data[i].state;
+
+                var dataValue = parseFloat(data[i].value);
+
+                for (var j = 0; j < json.features.length; j++) {
+                    
+                    var jsonState = json.features[j].properties.name;
+                    
+                    if (dataState == jsonState) {
+
+                        json.features[j].properties.value = dataValue;
+
+                        break;
+                    }
+                }
+            }
+
+            svg.selectAll("path")
+                .data(json.features)
+                .enter()
+                .append("path")
+                .attr("d", path)
+                .style("fill", function(d) {
+
+                    var value = d.properties.value;
+
+                    if (value) {
+
+                        return color(value);
+
+                    } else {
+
+                        return "#ccc";
+
+                    }
+            });
+        });
     });
 
 }
