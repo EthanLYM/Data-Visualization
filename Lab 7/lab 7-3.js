@@ -58,6 +58,38 @@ function init(){
                     return yScale(d[0]) - yScale(d[1]);
                 })
                 .attr("width", xScale.bandwidth());
+    
+    //Legend
+    var keys = ["apples", "oranges", "grapes"];
 
+    var dots = svg.selectAll("mydots")
+            .data(keys)
+            .enter()
+            .append("circle")
+                .attr("cx", 7)
+                .attr("cy", function(d, i){
+                    return 14 + i*25;
+                })
+                .attr("r", 7)
+                .attr("fill", function(d, i){
+                    return color(i);
+                });
+
+    var dots = svg.selectAll("text")
+            .data(keys)
+            .enter()
+            .append("text")
+                .attr("x", 21)
+                .attr("y", function(d, i){
+                    return 17.5 + i*25;
+                })
+                .attr("fill", function(d, i){
+                    return color(i);
+                })
+                .text (function(d){
+                    return d;
+                })
+                .attr("text-anchor", "left")
+                .script("alignment-baseline", "middle");
 }
 window.onload =init;

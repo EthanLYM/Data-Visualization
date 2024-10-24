@@ -69,7 +69,7 @@ function init(){
 
                     }
             });
-
+            
             d3.csv("VIC_city.csv").then(function(data){
                 svg.selectAll("circle")
                     .data(data)
@@ -83,7 +83,13 @@ function init(){
                     })
                     .attr("r", 5)
                     .style("fill", "red")
-                    .style("opacity", 0.75);
+                    .style("opacity", 0.75)
+                    .append("title")
+                    .text(function(d){
+                        return d.place;
+                    })
+                    
+                    
                 });
         });
     });
