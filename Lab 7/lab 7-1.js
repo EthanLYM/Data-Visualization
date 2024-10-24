@@ -12,11 +12,14 @@ function init(){
     }).then(function(data) {
         dataset = data;
 
-        lineChart(dataset);
+        //lineChart(dataset);
+
+        areaChart(dataset);
 
         console.table(dataset, ["data", "number"]);
-    });3.
+    });
 
+    //line
     function lineChart(dataset)
     {
         xScale = d3.scaleTime()
@@ -83,6 +86,74 @@ function init(){
             .text("Half a million unemployed");
     }
 
+    //area
+    function areaChart(dataset)
+    {
+        xScale = d3.scaleTime()
+                    .domain([
+                    d3.min(dataset, function(d) { return d.date; }),
+                    d3.max(dataset, function(d) { return d.date; })
+                    ])
+                .range([padding, w]);
 
+        yScale = d3.scaleLinear()
+                .domain([0, d3.max(dataset, function(d) { return d.number; })])
+                .range([h - padding, 0]);
+
+
+        var area = d3.area()
+                    .x(function(d) { return xScale(d.date); })
+                    //base line for area shape
+                    .y0(function(d) { return yScale.range() [0]; })
+                    .y1(function(d) { return yScale(d.number); });
+
+        //Create SVG element
+        var svg = d3.select("#chart")
+                    .append("svg")
+                    .attr("width",w)
+                    .attr("height",h);
+
+        //Create line
+        svg.append("path")
+            .datum(dataset)
+            .attr("class", "area")
+            .attr("d", area)
+            .style("fill", "#ccc");
+    
+            
+        var xAxis = d3.axisBottom()
+            .scale(xScale)
+            .ticks(10);
+
+        var yAxis = d3.axisLeft()
+                    .scale(yScale)
+                    .ticks(10);
+
+        svg.append("g")  
+            .attr("class", "x axis")  
+            .attr("transform", "translate(0, " + (h - padding) + ")")  
+            .call(xAxis);  
+            
+        svg.append("g")  
+            .attr("class", "y axis")  
+            .attr("transform", "translate(" + padding + ", 0)")  
+            .call(yAxis); 
+
+        svg.append("line")
+            .attr("class", "line halfMilMark")
+            //start of line
+            .attr("x1", padding)
+            .attr("y1", yScale(500000))
+            //end of line
+            .attr("x2", w)
+            .attr("y2", yScale(500000))
+            .attr("r", 255);
+
+        svg.append("text")
+            .attr("class", "halfMilLabel")
+            .attr("x", padding + 10)
+            .attr("y", yScale(500000) - 7)
+            .text("Half a million unemployed");
+    }
 }
 window.onload =init;

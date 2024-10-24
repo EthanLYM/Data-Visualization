@@ -15,8 +15,8 @@ function init(){
     var svg = d3.select("#chart")
                 .append("svg")
                 .attr("width", w)
-                .attr("height", h)
-                .attr("fill", "grey")
+                .attr("height", h);
+                
     
     d3.json("LGA_VIC.json").then(function(json){
 
@@ -25,6 +25,7 @@ function init(){
             .enter()
             .append("path")
             .attr("d", path)
+            .attr("fill", "grey");
 
     });
 

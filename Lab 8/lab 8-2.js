@@ -69,8 +69,23 @@ function init(){
 
                     }
             });
+
+            d3.csv("VIC_city.csv").then(function(data){
+                svg.selectAll("circle")
+                    .data(data)
+                    .enter()
+                    .append("circle")
+                    .attr("cx", function(d){
+                        return projection([d.lon, d.lat])[0];
+                    })
+                    .attr("cy", function(d){
+                        return projection([d.lon, d.lat])[1];
+                    })
+                    .attr("r", 5)
+                    .style("fill", "red")
+                    .style("opacity", 0.75);
+                });
         });
     });
-
 }
 window.onload =init;
